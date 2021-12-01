@@ -3,18 +3,21 @@ package com.awesomespring.awesomespring.controller;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.awesomespring.awesomespring.service.Greeting;
+import com.awesomespring.awesomespring.service.vo.GreetingRequest;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/users")
 public class GreetingController {
     private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
-	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	@PostMapping(path = "/greeting", consumes = "application/json", produces = "application/json")
+	public Greeting greeting(@RequestBody GreetingRequest greetingRequest) {
+		return new Greeting(counter.incrementAndGet(), String.format(template, greetingRequest.getName()));
 	}
 }

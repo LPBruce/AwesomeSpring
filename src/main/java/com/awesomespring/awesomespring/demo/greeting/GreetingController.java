@@ -1,9 +1,8 @@
-package com.awesomespring.awesomespring.controller;
+package com.awesomespring.awesomespring.demo.greeting;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.awesomespring.awesomespring.service.Greeting;
-import com.awesomespring.awesomespring.service.vo.GreetingRequest;
+import com.awesomespring.awesomespring.demo.greeting.vo.GreetingRequest;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

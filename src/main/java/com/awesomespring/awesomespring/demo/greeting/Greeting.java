@@ -1,4 +1,4 @@
-package com.awesomespring.awesomespring.service;
+package com.awesomespring.awesomespring.demo.greeting;
 
 import lombok.Getter;
 import lombok.Setter;

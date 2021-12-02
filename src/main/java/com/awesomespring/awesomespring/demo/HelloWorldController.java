@@ -1,4 +1,4 @@
-package com.awesomespring.awesomespring.controller;
+package com.awesomespring.awesomespring.demo;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

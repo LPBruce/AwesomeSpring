@@ -4,7 +4,8 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 /**
- * 构建领域类，本应用领域来自于《Spring实战》一书，练习使用，@RequiredArgsConstructor非必须注解
+ * 构建领域类，本应用领域来自于《Spring实战》一书，练习使用。
+ * 注解@RequiredArgsConstructor为非必须注解，具体参考Lombok插件相关注解
  * 
  */
 @Data

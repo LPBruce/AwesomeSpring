@@ -1,6 +1,11 @@
 package com.awesomespring.awesomespring.controller;
 
+import javax.validation.Valid;
+
+import com.awesomespring.awesomespring.service.vo.Taco;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +23,11 @@ public class OrderController {
     }
     
     @PostMapping
-    public String processOrder() {
+    public String processOrder(@Valid Taco taco, Errors errors) {
+        if (errors.hasErrors()) {
+            return "";
+        }
+
         log.info("order submitted: ");
         return "";
     }
